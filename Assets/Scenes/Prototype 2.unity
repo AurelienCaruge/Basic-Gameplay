@@ -557,6 +557,9 @@ MonoBehaviour:
   - {fileID: 4143010309333646535, guid: 8f43d5582de3cb847a42cabab41e0206, type: 3}
   - {fileID: 7053573244129193433, guid: 28455fd70368d5c4697e6b0e7ee3779b, type: 3}
   - {fileID: 9194084276648750351, guid: fbd2d446fe24ba646b1d54c967e7edda, type: 3}
+  sideSpawnMinZ: 3
+  sideSpawnMaxZ: 15
+  sideSpawnX: 20
 --- !u!4 &542581553
 Transform:
   m_ObjectHideFlags: 0
@@ -691,6 +694,50 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
+--- !u!1 &928702416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 928702418}
+  - component: {fileID: 928702417}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &928702417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928702416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a360cdf6aa68aa74381a1f730a71423d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &928702418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928702416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.1667824, y: 0, z: -1.2275066}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +781,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
       propertyPath: m_Name
-      value: SimpleFarmer_Woman_01_White
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
       propertyPath: m_RootOrder
@@ -943,6 +994,44 @@ MonoBehaviour:
   speed: 30
   xRange: 20
   projectilePrefab: {fileID: 3529771226841325573, guid: d386f14acfd24dd4b90ef765879eba79, type: 3}
+  zMin: -1.5
+  zMax: 15.5
+  verticalInput: 0
+  projectileSpawnPoint: {fileID: 2119679250}
+--- !u!4 &1742126414 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
+  m_PrefabInstance: {fileID: 1092931923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1742126415
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742126409}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
+--- !u!65 &1742126416
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742126409}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &1939562199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1000,3 +1089,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d386f14acfd24dd4b90ef765879eba79, type: 3}
+--- !u!1 &2119679249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2119679250}
+  m_Layer: 0
+  m_Name: FoodSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2119679250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119679249}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1742126414}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
